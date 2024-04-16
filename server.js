@@ -141,6 +141,11 @@ app.post("/login", function (req, res, next) {
 		successRedirect: "/",
 	};
 
+	if (req.body.role === "user") {
+		authenticationOptions.successRedirect = "/";
+	} else if (req.body.role === "doctor") {
+		authenticationOptions.successRedirect = "/";
+	}
 	passport.authenticate("local", authenticationOptions)(req, res, next);
 });
 
