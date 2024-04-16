@@ -83,7 +83,7 @@ app.use(
 		secret: process.env.SESSION_SECRET,
 		resave: false, // Do not resave session if not modified
 		saveUninitialized: false,
-		cookie: { maxAge: 60 * 1000 },
+		cookie: { maxAge: 60 * 60 * 1000 },
 	})
 );
 app.use(passport.initialize());
@@ -106,7 +106,7 @@ app.get("/", checkAuthenticated, function (req, res) {
 	if (req.user.role === "user") {
 		res.render("index.ejs", { name: req.user.name, email: req.user.email });
 	} else if (req.user.role === "doctor") {
-		res.send("Hello doctor");
+		res.render("doctors.ejs");
 	} else {
 		res.send(req.user.email + "Is not a doctor");
 	}
@@ -128,9 +128,12 @@ app.get("/register", function (req, res) {
 	importUserDetails();
 	res.render("register.ejs");
 });
-app.get("/doctors", checkAuthenticated, (req, res) => {
-	res.send("Hello Doctors");
-});
+
+// app.get("/doctors", checkAuthenticated, (req, res) => {
+// 	res.render("doctors.ejs");
+// 	// res.send("Hello Doctors");
+// });
+
 app.post("/login", function (req, res, next) {
 	const authenticationOptions = {
 		failureRedirect: "/login",
@@ -140,7 +143,7 @@ app.post("/login", function (req, res, next) {
 	if (req.body.role === "user") {
 		authenticationOptions.successRedirect = "/";
 	} else if (req.body.role === "doctor") {
-		authenticationOptions.successRedirect = "/doctors";
+		authenticationOptions.successRedirect = "/";
 	}
 	passport.authenticate("local", authenticationOptions)(req, res, next);
 });
@@ -161,18 +164,32 @@ app.post("/register", async (req, res) => {
 			id: Date.now().toString(),
 			name: req.body.name,
 			email: req.body.email,
+			role: req.body.role,
 			password: hashedPassword,
 		};
-		db.collection("userDetails")
-			.insertOne(newUser)
-			.then((result) => {
-				console.log(result);
-				// res.status(201).json(result);
-			})
-			.catch((err) => {
-				console.log(err);
-				// res.status(500).json({ err: "Could not create a new document" });
-			});
+		if (newUser.role === "user") {
+			db.collection("userDetails")
+				.insertOne(newUser)
+				.then((result) => {
+					console.log(result);
+					// res.status(201).json(result);
+				})
+				.catch((err) => {
+					console.log(err);
+					// res.status(500).json({ err: "Could not create a new document" });
+				});
+		} else if (newUser.role === "doctor") {
+			db.collection("doctorDetails")
+				.insertOne(newUser)
+				.then((result) => {
+					console.log(result);
+					// res.status(201).json(result);
+				})
+				.catch((err) => {
+					console.log(err);
+					// res.status(500).json({ err: "Could not create a new document" });
+				});
+		}
 
 		// users.push(newUser);
 		importUserDetails();

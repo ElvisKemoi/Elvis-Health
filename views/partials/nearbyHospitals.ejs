@@ -8,43 +8,59 @@
 					<div
 						class="icon me-2 d-flex justify-content-center align-items-center fs-1"
 					>
-						<!-- Placeholder icon -->
-						<i class="bi bi-hourglass-split fs-2 text-white"></i>
+						<i class="bi bi-info-circle-fill fs-2 text-white"></i>
 					</div>
 					<div class="overflow-hidden text-nowrap">
-						<!-- Placeholder text -->
-						<h2 class="text-white invoice-num fs-4">Loading...</h2>
-						<p class="text-white m-0 p-0">Loading...</p>
+						<h2 class="text-white invoice-num fs-4">
+							Location Access Required
+						</h2>
+						<p class="text-white m-0 p-0">To fetch nearby hospitals</p>
 						<p class="text-white fs-4 m-0 p-0">
-							<i class="bx bx-hourglass fs-2 p-1 text-warning"></i>Loading...
+							<i class="bx bx-map fs-2 p-1 text-warning"></i>Allow Location
+							Access
 						</p>
 						<p
 							class="text-white m-0 p-0 card-footer border-0 shadow-md text-nowrap fs-6"
 						>
-							<span id="drivingTime"
-								><i class="bx bxs-car mx-1 text-warning"></i>Loading...</span
+							<button
+								class="btn btn-success mx-1"
+								onclick="getNearbyHospitals()"
 							>
-							<span id="walkingTime"
-								><i class="bx bx-walk mx-1 text-warning"></i>Loading...</span
-							>
-							<span id="publicTransTime"
-								><i class="bx bxs-bus mx-1 text-warning"></i>Loading...</span
-							>
-						</p>
-						<p class="text-warning fs-3 m-0 p-0">
-							<span><i class="bx bxs-direction-right fs-3 mx-1"></i></span
-							>Loading...
+								Allow
+							</button>
+							<button class="btn btn-danger mx-1" onclick="rejectCookie()">
+								Deny
+							</button>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<!-- End of Placeholder -->
 	</div>
 </div>
 
 <script>
-	getNearbyHospitals();
+	// getNearbyHospitals();
+	async function rejectCookie() {
+		const nearbyHospitalsContainer = document.getElementById(
+			"nearbyHospitalsContainer"
+		);
+		nearbyHospitalsContainer.innerHTML = `
+		<div class="user-bx">
+										<img src="images/ion/man (1).png" alt="" />
+										<div>
+											<button class="btn btn-outline card" onclick="getNearbyHospitals()">Get Nearby Hospitals</button>
+										</div>
+										<i class="las la-check-circle check-icon"></i>
+									</div>
+
+
+
+		`;
+		// nearbyHospitalsContainer.style.display = "none";
+	}
 
 	async function getNearbyHospitals() {
 		if ("geolocation" in navigator) {
