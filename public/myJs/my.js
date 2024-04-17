@@ -119,3 +119,55 @@ async function getNearbyHospitals() {
 		console.error("Geolocation is not supported by this browser.");
 	}
 }
+
+// ?Get Remedy
+const getRemedyLoader = document.querySelector(".getRemedyLoader");
+const downArrow = document.querySelector(".downArrow");
+const getRemedyUrl = `/diagnosis/getDiagnosis`;
+const userRemedyBox = document.getElementById("userRemedy");
+
+function getRemedyFunction() {
+	downArrow.classList.remove("d-block");
+	downArrow.classList.add("d-none");
+	getRemedyLoader.classList.remove("d-none");
+	getRemedyLoader.classList.add("d-block");
+	dateTime = new Date();
+	var formattedDateTime = dateTime.toLocaleString();
+
+	const userSymptomsTest = document.getElementById("userSymptoms").value;
+	const requestBody = {
+		userSymptoms: userSymptomsTest, // Assuming userSymptoms is defined elsewhere
+	};
+	console.log(requestBody);
+
+	fetch(getRemedyUrl, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(requestBody),
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error("Network response was not ok");
+			}
+			return response.json();
+		})
+		.then((data) => {
+			userRemedyBox.classList.remove("d-none");
+			userRemedyBox.innerHTML = `
+			<h2 class="text-dark">Here is the remedy<span class="card-footer fs-6 text-break">${formattedDateTime}</span></h2>
+			<h6 class="">
+				${data.diagnosis}
+			</h6>`;
+
+			downArrow.classList.remove("d-none");
+			downArrow.classList.add("d-block");
+			getRemedyLoader.classList.remove("d-block");
+			getRemedyLoader.classList.add("d-none");
+			// Process the data as needed
+		})
+		.catch((error) => {
+			console.error("There was a problem with the fetch operation:", error);
+		});
+}

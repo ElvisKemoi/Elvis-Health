@@ -4,7 +4,7 @@ const { ObjectId } = require("mongodb");
 const router = express.Router();
 const geodist = require("geodist");
 
-const app = express();
+// const app = express();
 let db;
 
 router.get("/hospitals", async (req, res) => {

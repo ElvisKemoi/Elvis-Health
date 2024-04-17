@@ -19,7 +19,7 @@
 			</span>
 			<div>
 				<h3 class="text-white">
-					<i class="bx bxl-graphql fs-2 m-2"></i>Quick Remedy
+					<i class="bx bxl-graphql fs-2 m-2 mb-0"></i>Quick Remedy
 				</h3>
 				<!-- <p>Input your symptoms below and get some quick remedies</p> -->
 				<div class="mb-3">
@@ -28,26 +28,36 @@
 					>
 					<textarea
 						class="rounded p-2"
-						name=""
-						id=""
+						name="userSymptoms"
+						id="userSymptoms"
 						cols="30"
 						rows="2"
 						style="resize: none"
 						required
 					></textarea>
-
-					<small id="helpId" class="form-text text-muted">Help text</small>
 				</div>
+
 				<button
-					type="button"
+					type="button "
+					onclick="getRemedyFunction()"
+					id="getRemedyButton"
 					class="btn btn-outline-warning d-flex justify-content-center align-items-center py-2"
 				>
-					<i class="bi bi-arrow-down-circle fs-2 fw-bold me-2"></i>
+					<i
+						class="getRemedyLoader bx bx-loader-circle fs-2 fw-bold me-2 d-none"
+					></i>
+					<i
+						class="downArrow bi bi-arrow-down-circle fs-2 fw-bold me-2 d-block"
+					></i>
+
 					<span>Get Remedy</span>
 				</button>
-
-				<a class="text-white" href="javascript:void(0);">Learn more >></a>
 			</div>
 		</div>
+		<div
+			id="userRemedy"
+			class="card container overflow-auto d-none pt-0 mt-0"
+			style="max-height: 40vh"
+		></div>
 	</div>
 </div>
