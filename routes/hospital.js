@@ -10,7 +10,19 @@ let db;
 router.get("/hospitals", async (req, res) => {
 	try {
 		db = getDb();
-		const hospitals = await db.collection("hospitalDetails").find().toArray();
+		const hospitals = await db
+			.collection("hospitalDetails")
+			.find(
+				{},
+				{
+					projection: {
+						"properties.name": 1,
+						"properties.amenity": 1,
+						"geometry.coordinates": 1,
+					},
+				}
+			)
+			.toArray();
 		res.status(200).json(hospitals);
 	} catch (error) {
 		// Specify the error parameter
@@ -22,9 +34,16 @@ router.get("/hospitals", async (req, res) => {
 router.get("/hospital/:id", async (req, res) => {
 	try {
 		db = getDb();
-		const hospital = await db
-			.collection("hospitalDetails")
-			.findOne({ _id: new ObjectId(req.params.id) });
+		const hospital = await db.collection("hospitalDetails").findOne(
+			{ _id: new ObjectId(req.params.id) },
+			{
+				projection: {
+					"properties.name": 1,
+					"properties.amenity": 1,
+					"geometry.coordinates": 1,
+				},
+			}
+		);
 		if (hospital) {
 			res.status(200).json(hospital);
 		} else {
@@ -41,7 +60,19 @@ router.get("/hospitals/proximity", async (req, res) => {
 	try {
 		// Fetch hospitals data from the database
 		db = getDb();
-		const hospitals = await db.collection("hospitalDetails").find().toArray();
+		const hospitals = await db
+			.collection("hospitalDetails")
+			.find(
+				{},
+				{
+					projection: {
+						"properties.name": 1,
+						"properties.amenity": 1,
+						"geometry.coordinates": 1,
+					},
+				}
+			)
+			.toArray();
 
 		// Filter hospitals by specified amenity
 		const filteredHospitals = hospitals.filter(

@@ -66,12 +66,10 @@ async function generateDiagnosis(userSymptoms) {
 
 router.post("/getDiagnosis", async (req, res) => {
 	const userSymptoms = req.body.userSymptoms;
-	console.log("User symptoms:", userSymptoms);
 
 	try {
 		const diagnosis = await generateDiagnosis(userSymptoms);
 		req.session.userDiagnosis = diagnosis;
-		console.log("Diagnosis:", diagnosis);
 		res.status(200).json({ diagnosis });
 	} catch (error) {
 		console.error("Error:", error.message);

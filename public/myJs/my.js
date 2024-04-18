@@ -149,6 +149,10 @@ function getRemedyFunction() {
 	})
 		.then((response) => {
 			if (!response.ok) {
+				userRemedyBox.classList.remove("d-none");
+
+				userRemedyBox.innerHTML = `<h3 class="text-danger">There was an error fetching the remedy. Pleasy try again.</h3>`;
+
 				throw new Error("Network response was not ok");
 			}
 			return response.json();
