@@ -30,3 +30,7 @@
 		transform: rotate(360deg);
 	}
 }
+
+#getRemedyButton {
+	box-shadow: 0 0 10px #ffc107;
+}

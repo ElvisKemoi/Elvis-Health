@@ -285,12 +285,11 @@
 
 		
 		<!-- <div class="h-auto container-fluid" style="margin-top: 7rem;"> -->
-
+					<!-- ?NearBy Hospitals -->
 					<div class="content-body">
-					
-
 						<%- include("partials/nearbyHospitals.ejs") %>
 					<div class="row">
+					<!-- ? Ambulance Service Section-->
 						<div class="col-xl-9 col-xxl-12">
 							<div class="card">
 								<!-- ?Start of  Call ambulance -->
@@ -358,6 +357,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- ?Ai Assistant Get Remedy -->
 						<div class="col-xl-3 col-xxl-5">
 							<!-- ?Start of our Activity stats -->
 							<div class="card">
@@ -379,348 +379,121 @@
 									<div id="chartBar" class="bar-chart"></div>
 								</div>
 							</div>
-						</div>
-						<div class="col-xl-3 col-xxl-7">
-							<div class="card">
-								<div class="card-header border-0 pb-0">
-									<div>
-										<h4 class="card-title mb-2">Quick Transfer</h4>
-										<span class="fs-12"
-											>Lorem ipsum dolor sit amet, consectetur</span
-										>
-									</div>
-									<div class="dropdown">
-										<a
-											href="javascript:void(0);"
-											class="btn-link"
-											data-bs-toggle="dropdown"
-											aria-expanded="false"
-										>
-											<svg
-												width="24"
-												height="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+						</div><div class="col-xl-6 col-xxl-12">
+							<div class="row">
+
+								<%- include("partials/aiAssistant.ejs") %>
+								
+								<div class="col-md-6">
+									<div class="card progress-card">
+										<div class="card-body d-flex">
+											<div class="me-auto">
+												<h4 class="card-title">Total Transactions</h4>
+												<div class="d-flex align-items-center">
+													<h2 class="fs-38 mb-0">98k</h2>
+													<div class="text-success transaction-caret">
+														<i class="fas fa-sort-up"></i>
+														<p class="mb-0">+0.5%</p>
+													</div>
+												</div>
+											</div>
+											<div
+												class="progress progress-vertical-bottom"
+												style="min-height: 110px; min-width: 10px"
 											>
-												<path
-													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-											</svg>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Delete</a
+												<div
+													class="progress-bar bg-primary"
+													style="width: 10px; height: 40%"
+													role="progressbar"
+												>
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+											<div
+												class="progress progress-vertical-bottom"
+												style="min-height: 110px; min-width: 10px"
 											>
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Edit</a
+												<div
+													class="progress-bar bg-primary"
+													style="width: 10px; height: 55%"
+													role="progressbar"
+												>
+													<span class="sr-only">55% Complete</span>
+												</div>
+											</div>
+											<div
+												class="progress progress-vertical-bottom"
+												style="min-height: 110px; min-width: 10px"
 											>
+												<div
+													class="progress-bar bg-primary"
+													style="width: 10px; height: 80%"
+													role="progressbar"
+												>
+													<span class="sr-only">80% Complete</span>
+												</div>
+											</div>
+											<div
+												class="progress progress-vertical-bottom"
+												style="min-height: 110px; min-width: 10px"
+											>
+												<div
+													class="progress-bar bg-primary"
+													style="width: 10px; height: 50%"
+													role="progressbar"
+												>
+													<span class="sr-only">50% Complete</span>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="card-body">
-									<div class="user-bx">
-										<img src="images/ion/man (1).png" alt="" />
-										<div>
-											<h6 class="user-name">Samuel</h6>
-											<span class="meta">@sam224</span>
-										</div>
-										<i class="las la-check-circle check-icon"></i>
-									</div>
-									<h4 class="mt-3 mb-3">
-										Recent Friend<a
-											href="javascript:void(0);"
-											class="fs-16 float-end text-secondary font-w600"
-											>See More</a
-										>
-									</h4>
-									<ul class="user-list">
-										<li><img src="images/ion/bussiness-man.png" alt="" /></li>
-										<li><img src="images/ion/hacker.png" alt="" /></li>
-										<li><img src="images/ion/man (2).png" alt="" /></li>
-										<li><img src="images/ion/woman.png" alt="" /></li>
-										<li><img src="images/ion/man.png" alt="" /></li>
-										<li><img src="images/ion/woman.png" alt="" /></li>
-									</ul>
-									<h4 class="mt-3 mb-0">Insert Amount</h4>
-									<div class="format-slider">
-										<input
-											class="form-control amount-input"
-											title="Formatted number"
-											id="input-format"
-										/>
-										<div id="slider-format"></div>
-									</div>
-									<div
-										class="text-secondary fs-16 d-flex justify-content-between font-w600 mt-4"
-									>
-										<span>Your Balance</span>
-										<span>$ 456,345.62</span>
-									</div>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<a
-										href="javascript:void(0);"
-										class="btn btn-primary d-block btn-lg text-uppercase"
-										>Transfer Now</a
-									>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-xxl-5">
-							<div class="card">
-								<div class="card-header border-0 pb-0">
-									<div>
-										<h4 class="card-title mb-2">Spendings</h4>
-										<span class="fs-12"
-											>Lorem ipsum dolor sit amet, consectetur</span
-										>
-									</div>
-									<div class="dropdown">
-										<a
-											href="javascript:void(0);"
-											class="btn-link"
-											data-bs-toggle="dropdown"
-											aria-expanded="false"
-										>
-											<svg
-												width="24"
-												height="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-											</svg>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Delete</a
-											>
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Edit</a
-											>
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title">Invoice Remaining</h4>
+											<div class="d-flex align-items-center">
+												<div class="me-auto">
+													<div class="progress mt-4" style="height: 10px">
+														<div
+															class="progress-bar bg-primary progress-animated"
+															style="width: 45%; height: 10px"
+															role="progressbar"
+														>
+															<span class="sr-only">60% Complete</span>
+														</div>
+													</div>
+													<p class="fs-16 mb-0 mt-2">
+														<span class="text-danger">-0,8% </span>from last
+														month
+													</p>
+												</div>
+												<h2 class="fs-38">854</h2>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="card-body">
-									<div class="progress default-progress">
-										<div
-											class="progress-bar bg-gradient-1 progress-animated"
-											style="width: 45%; height: 20px"
-											role="progressbar"
-										>
-											<span class="sr-only">45% Complete</span>
-										</div>
-									</div>
-									<div
-										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
-									>
-										<span>Investment</span>
-										<span class="fs-18"
-											><span class="text-black pe-2">$1415</span>/$2000</span
-										>
-									</div>
-									<div class="progress default-progress mt-4">
-										<div
-											class="progress-bar bg-gradient-2 progress-animated"
-											style="width: 70%; height: 20px"
-											role="progressbar"
-										>
-											<span class="sr-only">70% Complete</span>
-										</div>
-									</div>
-									<div
-										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
-									>
-										<span>Restaurant</span>
-										<span class="fs-18"
-											><span class="text-black pe-2">$1567</span>/$5000</span
-										>
-									</div>
-									<div class="progress default-progress mt-4">
-										<div
-											class="progress-bar bg-gradient-3 progress-animated"
-											style="width: 35%; height: 20px"
-											role="progressbar"
-										>
-											<span class="sr-only">35% Complete</span>
-										</div>
-									</div>
-									<div
-										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
-									>
-										<span>Installment</span>
-										<span class="fs-18"
-											><span class="text-black pe-2">$487</span>/$10000</span
-										>
-									</div>
-									<div class="progress default-progress mt-4">
-										<div
-											class="progress-bar bg-gradient-4 progress-animated"
-											style="width: 95%; height: 20px"
-											role="progressbar"
-										>
-											<span class="sr-only">95% Complete</span>
-										</div>
-									</div>
-									<div
-										class="d-flex align-items-end mt-2 justify-content-between"
-									>
-										<span>Property</span>
-										<span class="fs-18"
-											><span class="text-black pe-2">$3890</span>/$4000</span
-										>
-									</div>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<a
-										href="javascript:void(0);"
-										class="btn btn-outline-primary d-block btn-lg"
-										>View More</a
-									>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-xxl-7">
-							<div class="card">
-								<div class="card-header d-flex flex-wrap border-0 pb-0">
-									<div class="me-auto mb-sm-0 mb-3">
-										<h4 class="card-title mb-2">Transaction Overview</h4>
-										<span class="fs-12"
-											>Lorem ipsum dolor sit amet, consectetur</span
-										>
-									</div>
-									<a
-										href="javascript:void(0)"
-										class="btn btn-rounded btn-md btn-primary me-3 me-3"
-										><i class="las la-download scale5 me-3"></i>Download
-										Report</a
-									>
-									<div class="dropdown">
-										<a
-											href="javascript:void(0);"
-											class="btn-link"
-											data-bs-toggle="dropdown"
-											aria-expanded="false"
-										>
-											<svg
-												width="24"
-												height="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-												<path
-													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
-													stroke="#575757"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												></path>
-											</svg>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Delete</a
-											>
-											<a class="dropdown-item" href="javascript:void(0);"
-												>Edit</a
-											>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title mt-2">Invoice Sent</h4>
+											<div class="d-flex align-items-center mt-3 mb-2">
+												<h2 class="fs-38 mb-0 me-3">456</h2>
+												<span class="badge badge-success badge-xl">+0.5%</span>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="card-body pb-2">
-									<div class="d-sm-flex d-block">
-										<div
-											class="form-check toggle-switch text-end form-switch me-4"
-										>
-											<input
-												checked
-												class="form-check-input"
-												type="checkbox"
-												id="flexSwitchCheckDefault"
-											/>
-											<label
-												class="form-check-label"
-												for="flexSwitchCheckDefault"
-												>Number</label
-											>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title mt-2">Invoice Compeleted</h4>
+											<div class="d-flex align-items-center mt-3 mb-2">
+												<h2 class="fs-38 mb-0 me-3">1467</h2>
+												<span class="badge badge-danger badge-xl">-6.4%</span>
+											</div>
 										</div>
-										<div
-											class="form-check toggle-switch text-end form-switch me-auto"
-										>
-											<input
-												class="form-check-input"
-												type="checkbox"
-												id="flexSwitchCheckDefault1"
-											/>
-											<label
-												class="form-check-label"
-												for="flexSwitchCheckDefault1"
-												>Analytics</label
-											>
-										</div>
-										<ul class="card-list d-flex mt-sm-0 mt-3">
-											<li class="me-3">
-												<span class="bg-success circle"></span>Income
-											</li>
-											<li><span class="bg-danger circle"></span>Outcome</li>
-										</ul>
 									</div>
-									<div id="chartBar2" class="bar-chart"></div>
 								</div>
 							</div>
 						</div>
@@ -1379,124 +1152,352 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-xxl-12">
-							<div class="row">
-
-								<%- include("partials/aiAssistant.ejs") %>
-								
-								<div class="col-md-6">
-									<div class="card progress-card">
-										<div class="card-body d-flex">
-											<div class="me-auto">
-												<h4 class="card-title">Total Transactions</h4>
-												<div class="d-flex align-items-center">
-													<h2 class="fs-38 mb-0">98k</h2>
-													<div class="text-success transaction-caret">
-														<i class="fas fa-sort-up"></i>
-														<p class="mb-0">+0.5%</p>
-													</div>
-												</div>
-											</div>
-											<div
-												class="progress progress-vertical-bottom"
-												style="min-height: 110px; min-width: 10px"
+						<div class="col-xl-3 col-xxl-7">
+							<div class="card">
+								<div class="card-header border-0 pb-0">
+									<div>
+										<h4 class="card-title mb-2">Quick Transfer</h4>
+										<span class="fs-12"
+											>Lorem ipsum dolor sit amet, consectetur</span
+										>
+									</div>
+									<div class="dropdown">
+										<a
+											href="javascript:void(0);"
+											class="btn-link"
+											data-bs-toggle="dropdown"
+											aria-expanded="false"
+										>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
 											>
-												<div
-													class="progress-bar bg-primary"
-													style="width: 10px; height: 40%"
-													role="progressbar"
-												>
-													<span class="sr-only">40% Complete</span>
-												</div>
-											</div>
-											<div
-												class="progress progress-vertical-bottom"
-												style="min-height: 110px; min-width: 10px"
+												<path
+													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+											</svg>
+										</a>
+										<div class="dropdown-menu dropdown-menu-right">
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Delete</a
 											>
-												<div
-													class="progress-bar bg-primary"
-													style="width: 10px; height: 55%"
-													role="progressbar"
-												>
-													<span class="sr-only">55% Complete</span>
-												</div>
-											</div>
-											<div
-												class="progress progress-vertical-bottom"
-												style="min-height: 110px; min-width: 10px"
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Edit</a
 											>
-												<div
-													class="progress-bar bg-primary"
-													style="width: 10px; height: 80%"
-													role="progressbar"
-												>
-													<span class="sr-only">80% Complete</span>
-												</div>
-											</div>
-											<div
-												class="progress progress-vertical-bottom"
-												style="min-height: 110px; min-width: 10px"
-											>
-												<div
-													class="progress-bar bg-primary"
-													style="width: 10px; height: 50%"
-													role="progressbar"
-												>
-													<span class="sr-only">50% Complete</span>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="card">
-										<div class="card-body">
-											<h4 class="card-title">Invoice Remaining</h4>
-											<div class="d-flex align-items-center">
-												<div class="me-auto">
-													<div class="progress mt-4" style="height: 10px">
-														<div
-															class="progress-bar bg-primary progress-animated"
-															style="width: 45%; height: 10px"
-															role="progressbar"
-														>
-															<span class="sr-only">60% Complete</span>
-														</div>
-													</div>
-													<p class="fs-16 mb-0 mt-2">
-														<span class="text-danger">-0,8% </span>from last
-														month
-													</p>
-												</div>
-												<h2 class="fs-38">854</h2>
-											</div>
+								<div class="card-body">
+									<div class="user-bx">
+										<img src="images/ion/man (1).png" alt="" />
+										<div>
+											<h6 class="user-name">Samuel</h6>
+											<span class="meta">@sam224</span>
 										</div>
+										<i class="las la-check-circle check-icon"></i>
+									</div>
+									<h4 class="mt-3 mb-3">
+										Recent Friend<a
+											href="javascript:void(0);"
+											class="fs-16 float-end text-secondary font-w600"
+											>See More</a
+										>
+									</h4>
+									<ul class="user-list">
+										<li><img src="images/ion/bussiness-man.png" alt="" /></li>
+										<li><img src="images/ion/hacker.png" alt="" /></li>
+										<li><img src="images/ion/man (2).png" alt="" /></li>
+										<li><img src="images/ion/woman.png" alt="" /></li>
+										<li><img src="images/ion/man.png" alt="" /></li>
+										<li><img src="images/ion/woman.png" alt="" /></li>
+									</ul>
+									<h4 class="mt-3 mb-0">Insert Amount</h4>
+									<div class="format-slider">
+										<input
+											class="form-control amount-input"
+											title="Formatted number"
+											id="input-format"
+										/>
+										<div id="slider-format"></div>
+									</div>
+									<div
+										class="text-secondary fs-16 d-flex justify-content-between font-w600 mt-4"
+									>
+										<span>Your Balance</span>
+										<span>$ 456,345.62</span>
 									</div>
 								</div>
-								<div class="col-sm-6">
-									<div class="card">
-										<div class="card-body">
-											<h4 class="card-title mt-2">Invoice Sent</h4>
-											<div class="d-flex align-items-center mt-3 mb-2">
-												<h2 class="fs-38 mb-0 me-3">456</h2>
-												<span class="badge badge-success badge-xl">+0.5%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="card">
-										<div class="card-body">
-											<h4 class="card-title mt-2">Invoice Compeleted</h4>
-											<div class="d-flex align-items-center mt-3 mb-2">
-												<h2 class="fs-38 mb-0 me-3">1467</h2>
-												<span class="badge badge-danger badge-xl">-6.4%</span>
-											</div>
-										</div>
-									</div>
+								<div class="card-footer border-0 pt-0">
+									<a
+										href="javascript:void(0);"
+										class="btn btn-primary d-block btn-lg text-uppercase"
+										>Transfer Now</a
+									>
 								</div>
 							</div>
 						</div>
+						<div class="col-xl-3 col-xxl-5">
+							<div class="card">
+								<div class="card-header border-0 pb-0">
+									<div>
+										<h4 class="card-title mb-2">Spendings</h4>
+										<span class="fs-12"
+											>Lorem ipsum dolor sit amet, consectetur</span
+										>
+									</div>
+									<div class="dropdown">
+										<a
+											href="javascript:void(0);"
+											class="btn-link"
+											data-bs-toggle="dropdown"
+											aria-expanded="false"
+										>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+											</svg>
+										</a>
+										<div class="dropdown-menu dropdown-menu-right">
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Delete</a
+											>
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Edit</a
+											>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="progress default-progress">
+										<div
+											class="progress-bar bg-gradient-1 progress-animated"
+											style="width: 45%; height: 20px"
+											role="progressbar"
+										>
+											<span class="sr-only">45% Complete</span>
+										</div>
+									</div>
+									<div
+										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
+									>
+										<span>Investment</span>
+										<span class="fs-18"
+											><span class="text-black pe-2">$1415</span>/$2000</span
+										>
+									</div>
+									<div class="progress default-progress mt-4">
+										<div
+											class="progress-bar bg-gradient-2 progress-animated"
+											style="width: 70%; height: 20px"
+											role="progressbar"
+										>
+											<span class="sr-only">70% Complete</span>
+										</div>
+									</div>
+									<div
+										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
+									>
+										<span>Restaurant</span>
+										<span class="fs-18"
+											><span class="text-black pe-2">$1567</span>/$5000</span
+										>
+									</div>
+									<div class="progress default-progress mt-4">
+										<div
+											class="progress-bar bg-gradient-3 progress-animated"
+											style="width: 35%; height: 20px"
+											role="progressbar"
+										>
+											<span class="sr-only">35% Complete</span>
+										</div>
+									</div>
+									<div
+										class="d-flex align-items-end mt-2 pb-3 justify-content-between"
+									>
+										<span>Installment</span>
+										<span class="fs-18"
+											><span class="text-black pe-2">$487</span>/$10000</span
+										>
+									</div>
+									<div class="progress default-progress mt-4">
+										<div
+											class="progress-bar bg-gradient-4 progress-animated"
+											style="width: 95%; height: 20px"
+											role="progressbar"
+										>
+											<span class="sr-only">95% Complete</span>
+										</div>
+									</div>
+									<div
+										class="d-flex align-items-end mt-2 justify-content-between"
+									>
+										<span>Property</span>
+										<span class="fs-18"
+											><span class="text-black pe-2">$3890</span>/$4000</span
+										>
+									</div>
+								</div>
+								<div class="card-footer border-0 pt-0">
+									<a
+										href="javascript:void(0);"
+										class="btn btn-outline-primary d-block btn-lg"
+										>View More</a
+									>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-xxl-7">
+							<div class="card">
+								<div class="card-header d-flex flex-wrap border-0 pb-0">
+									<div class="me-auto mb-sm-0 mb-3">
+										<h4 class="card-title mb-2">Transaction Overview</h4>
+										<span class="fs-12"
+											>Lorem ipsum dolor sit amet, consectetur</span
+										>
+									</div>
+									<a
+										href="javascript:void(0)"
+										class="btn btn-rounded btn-md btn-primary me-3 me-3"
+										><i class="las la-download scale5 me-3"></i>Download
+										Report</a
+									>
+									<div class="dropdown">
+										<a
+											href="javascript:void(0);"
+											class="btn-link"
+											data-bs-toggle="dropdown"
+											aria-expanded="false"
+										>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+												<path
+													d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+													stroke="#575757"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												></path>
+											</svg>
+										</a>
+										<div class="dropdown-menu dropdown-menu-right">
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Delete</a
+											>
+											<a class="dropdown-item" href="javascript:void(0);"
+												>Edit</a
+											>
+										</div>
+									</div>
+								</div>
+								<div class="card-body pb-2">
+									<div class="d-sm-flex d-block">
+										<div
+											class="form-check toggle-switch text-end form-switch me-4"
+										>
+											<input
+												checked
+												class="form-check-input"
+												type="checkbox"
+												id="flexSwitchCheckDefault"
+											/>
+											<label
+												class="form-check-label"
+												for="flexSwitchCheckDefault"
+												>Number</label
+											>
+										</div>
+										<div
+											class="form-check toggle-switch text-end form-switch me-auto"
+										>
+											<input
+												class="form-check-input"
+												type="checkbox"
+												id="flexSwitchCheckDefault1"
+											/>
+											<label
+												class="form-check-label"
+												for="flexSwitchCheckDefault1"
+												>Analytics</label
+											>
+										</div>
+										<ul class="card-list d-flex mt-sm-0 mt-3">
+											<li class="me-3">
+												<span class="bg-success circle"></span>Income
+											</li>
+											<li><span class="bg-danger circle"></span>Outcome</li>
+										</ul>
+									</div>
+									<div id="chartBar2" class="bar-chart"></div>
+								</div>
+							</div>
+						</div>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -1510,8 +1511,8 @@
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						© Designed &amp; by
-						<a href="#" target="_blank">Animation Coding</a> 2022
+						© Designed by
+						<a href="#" target="_blank">Dev Austine &amp; Elvis Kemoi</a> 2024
 					</p>
 				</div>
 			</div>

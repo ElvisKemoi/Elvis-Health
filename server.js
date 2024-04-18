@@ -97,7 +97,11 @@ function importUserDetails() {
 
 app.get("/", checkAuthenticated, function (req, res) {
 	if (req.user.role === "user") {
-		res.render("index.ejs", { name: req.user.name, email: req.user.email });
+		res.render("index.ejs", {
+			name: req.user.name,
+			email: req.user.email,
+			id: req.user._id,
+		});
 	} else if (req.user.role === "doctor") {
 		res.render("doctors.ejs");
 	} else {
@@ -160,6 +164,9 @@ app.post("/register", async (req, res) => {
 			email: req.body.email,
 			role: req.body.role,
 			password: hashedPassword,
+			gender: "",
+			dob: "",
+			requests: [],
 		};
 		if (newUser.role === "user") {
 			db.collection("userDetails")
