@@ -126,19 +126,21 @@ const downArrow = document.querySelector(".downArrow");
 const getRemedyUrl = `/diagnosis/getDiagnosis`;
 const userRemedyBox = document.getElementById("userRemedy");
 
-function getRemedyFunction() {
+function getRemedyFunction(userId) {
+	const userId1 = userId;
 	downArrow.classList.remove("d-block");
 	downArrow.classList.add("d-none");
 	getRemedyLoader.classList.remove("d-none");
 	getRemedyLoader.classList.add("d-block");
-	dateTime = new Date();
-	var formattedDateTime = dateTime.toLocaleString();
+	dateTime1 = new Date();
+	var formattedDateTime = dateTime1.toLocaleString();
 
 	const userSymptomsTest = document.getElementById("userSymptoms").value;
 	const requestBody = {
+		userId: userId1,
+		dateTime: dateTime1,
 		userSymptoms: userSymptomsTest, // Assuming userSymptoms is defined elsewhere
 	};
-	console.log(requestBody);
 
 	fetch(getRemedyUrl, {
 		method: "POST",
@@ -160,7 +162,7 @@ function getRemedyFunction() {
 		.then((data) => {
 			userRemedyBox.classList.remove("d-none");
 			userRemedyBox.innerHTML = `
-			<h2 class="text-dark">Here is the remedy<span class="card-footer fs-6 text-break">${formattedDateTime}</span></h2>
+			<h2 class="text-dark">Here is the remedy<span class="card-footer fs-6 text-break">${formattedDateTime}</span><span class="text-warning">${data.saveStatus}</span></h2>
 			<h6 class="">
 				${data.diagnosis}
 			</h6>`;

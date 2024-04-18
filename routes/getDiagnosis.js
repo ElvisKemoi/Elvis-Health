@@ -5,6 +5,11 @@ const {
 	HarmBlockThreshold,
 } = require("@google/generative-ai");
 
+const { getDb } = require("../db");
+
+const { ObjectId } = require("mongodb");
+let db;
+
 const router = express.Router();
 
 async function generateDiagnosis(userSymptoms) {
@@ -65,17 +70,75 @@ async function generateDiagnosis(userSymptoms) {
 }
 
 router.post("/getDiagnosis", async (req, res) => {
-	const userSymptoms = req.body.userSymptoms;
+	const { userId, dateTime, userSymptoms } = req.body;
+	let saveSatatus = "";
 
 	try {
 		const diagnosis = await generateDiagnosis(userSymptoms);
-		req.session.userDiagnosis = diagnosis;
-		res.status(200).json({ diagnosis });
+		const saveDetails = {
+			userSymptoms,
+			dateTime,
+			diagnosis,
+		};
+
+		const db = getDb(); // Assuming getDb() is defined elsewhere
+		db.collection("userDetails")
+			.updateOne(
+				{ _id: new ObjectId(`${userId}`) },
+				{ $push: { requests: saveDetails } }
+			)
+			.then((result) => {
+				if (result.modifiedCount === 1) {
+					saveSatatus = "Saved";
+				} else {
+					saveSatatus = "Not Saved";
+				}
+
+				req.session.userDiagnosis = diagnosis;
+				res.status(200).json({ diagnosis: diagnosis, saveStatus: saveSatatus });
+				// console.log(result.modifiedCount);
+				// Handle successful update
+			})
+			.catch((error) => {
+				console.error("Error occurred:", error);
+				// Handle error
+			});
+
+		// save(userId, userSymptoms, dateTime, diagnosis);
 	} catch (error) {
 		console.error("Error:", error.message);
 		req.flash("error", "Error getting diagnosis. Please try again.");
 		res.status(500).json({ error: "Could not fetch diagnosis" });
 	}
 });
+
+// function save(id, symptoms, datetime, diagnosis) {
+// 	const saveDetails = {
+// 		symptoms,
+// 		datetime,
+// 		diagnosis,
+// 	};
+
+// 	const db = getDb(); // Assuming getDb() is defined elsewhere
+// 	db.collection("userDetails")
+// 		.updateOne(
+// 			{ _id: new ObjectId(`${id}`) },
+// 			{ $push: { requests: saveDetails } }
+// 		)
+// 		.then((result) => {
+// 			if (result.modifiedCount === 1) {
+// 				return "Saved";
+// 			} else {
+// 				return "Not Saved";
+// 			}
+// 			console.log(saveSatatus + "3");
+// 			// console.log(result.modifiedCount);
+// 			// Handle successful update
+// 		})
+// 		.catch((error) => {
+// 			console.error("Error occurred:", error);
+// 			// Handle error
+// 		});
+// }
 
 module.exports = router;
