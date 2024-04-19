@@ -70,14 +70,14 @@ async function generateDiagnosis(userSymptoms) {
 }
 
 router.post("/getDiagnosis", async (req, res) => {
-	const { userId, dateTime, userSymptoms } = req.body;
+	const { userId, datetime, userSymptoms } = req.body;
 	let saveSatatus = "";
 
 	try {
 		const diagnosis = await generateDiagnosis(userSymptoms);
 		const saveDetails = {
 			userSymptoms,
-			dateTime,
+			datetime,
 			diagnosis,
 		};
 
@@ -85,7 +85,7 @@ router.post("/getDiagnosis", async (req, res) => {
 		db.collection("userDetails")
 			.updateOne(
 				{ _id: new ObjectId(`${userId}`) },
-				{ $push: { requests: saveDetails } }
+				{ $push: { requests: { $each: [saveDetails], $position: 0 } } }
 			)
 			.then((result) => {
 				if (result.modifiedCount === 1) {
