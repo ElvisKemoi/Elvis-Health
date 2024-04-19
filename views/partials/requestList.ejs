@@ -1,0 +1,57 @@
+<div class="card" style="height: auto">
+	<div class="card-header d-block d-sm-flex border-0">
+		<div class="me-3">
+			<h4 class="card-title mb-2">Previous Remedy Requests</h4>
+			<span class="fs-12">Lorem ipsum dolor sit amet, consectetur</span>
+		</div>
+		<div class="card-tabs mt-3 mt-sm-0">
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a
+						class="nav-link active"
+						data-bs-toggle="tab"
+						href="#monthly"
+						role="tab"
+						>This Month</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="tab" href="#Weekly" role="tab"
+						>This Week</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="tab" href="#Today" role="tab"
+						>Today</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div
+		class="card-body tab-content p-0"
+		style="max-height: 60vh; overflow: scroll"
+	>
+		<div class="tab-pane active show fade" id="monthly" role="tabpanel">
+			<div class="table-responsive">
+				<table class="table table-responsive-md card-table transactions-table">
+					<tbody class="requestListList"></tbody>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane" id="Weekly" role="tabpanel">
+			<div class="table-responsive">
+				<table class="table table-responsive-md card-table transactions-table">
+					<tbody class="requestListWeek"></tbody>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane" id="Today" role="tabpanel">
+			<div class="table-responsive">
+				<table class="table table-responsive-md card-table transactions-table">
+					<tbody class="requestListDay"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
