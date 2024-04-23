@@ -22,23 +22,28 @@ async function rejectCookie() {
 	// nearbyHospitalsContainer.style.display = "none";
 }
 
-async function showLocation(long, lat) {
-	const googleMapUrl = `http://maps.google.com/?ie=UTF8&amp;ll=${lat},${long}&amp;spn=0.093419,0.169086&amp;t=m&amp;z=13&amp;output=embed&markers=-1.249068,36.871364`;
+async function showLocation(long, lat, zoom) {
+	const googleMapUrl = `http://maps.google.com/?ie=UTF8&ll=${Number(
+		lat
+	)},${Number(
+		long
+	)}&spn=0.093419,0.169086&t=m&z=${zoom}&output=embed&markers=-1.249068,36.871364`;
 
-	const googleMap = document.getElementById("googleMap");
+	const googleMap = document.querySelector("#googleMap");
 	googleMap.innerHTML = "";
 	googleMap.innerHTML = `
-	<iframe
-	width="100%"
-	class="rounded"
-	src="${googleMapUrl}"
-	height="120%"
-	style="border: 0"
-	allowfullscreen=""
-	loading="lazy"
-	referrerpolicy="no-referrer-when-downgrade"
-></iframe>
-	`;
+        <iframe
+            width="100%"
+            class="rounded"
+            src="${googleMapUrl}"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-wzhen-downgrade">
+        </iframe>
+    `;
+	// googleMap.classList.remove("invisible");
 }
 
 async function getNearbyHospitals() {
@@ -49,9 +54,7 @@ async function getNearbyHospitals() {
 				const longitude = position.coords.longitude;
 
 				const url = `/api/hospitals/proximity?latitude=${latitude}&longitude=${longitude}&amenity=hospital&more=4`;
-				showLocation(longitude, latitude).then(
-					googleMap.classList.remove("invisible")
-				);
+				showLocation(longitude, latitude, 13);
 
 				fetch(url)
 					.then((response) => {
@@ -89,9 +92,9 @@ async function getNearbyHospitals() {
 
 							row.classList.add("col-xl-3", "col-xxl-3", "col-sm-6");
 							row.innerHTML = `
-                                            <form action="">
+                                           
                                                 <div class="card bg-warning invoice-card">
-                                                    <button class="reset" type="submit">
+                                                     <button class="reset">
                                                         <div class="card-body d-flex pb-2 pt-2 mb-0">
                                                             <div class="icon me-2 d-flex justify-content-center align-items-center fs-1">
                                                                 <i class="bi bi-hospital-fill fs-2 text-white"></i>
@@ -106,7 +109,9 @@ async function getNearbyHospitals() {
                                                                     <span id="publicTransTime"><i class='bx bxs-bus mx-1 text-warning'></i>${publicTime}</span>
                                                                     <span id="walkingTime"><i class='bx bx-walk mx-1 text-warning'></i>${walkingTime}</span>
                                                                 </p>
-                                                                    <button id="directionBtn" class="btn btn-secondary  py-0 mx-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+																
+                                                                    <button id="directionBtn" class="btn btn-secondary  py-0 mx-0"  onclick="showLocation('${hospital.location[0]}','${hospital.location[1]}',16)"
+																	>
                                                                         <div class="text-white-emphasis  fs-3 m-0 p-0">
                                                                     <span><i class='bx bxs-direction-right text-warning fs-3 mx-1 py-0 mx-0'></i></span>View Location 
 
@@ -118,7 +123,7 @@ async function getNearbyHospitals() {
                                                         </div>
                                                     </button>
                                                 </div>
-                                            </form>
+                                         
                                         `;
 							fragment.appendChild(row);
 						});
