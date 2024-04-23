@@ -22,13 +22,36 @@ async function rejectCookie() {
 	// nearbyHospitalsContainer.style.display = "none";
 }
 
+async function showLocation(long, lat) {
+	const googleMapUrl = `http://maps.google.com/?ie=UTF8&amp;ll=${lat},${long}&amp;spn=0.093419,0.169086&amp;t=m&amp;z=13&amp;output=embed&markers=-1.249068,36.871364`;
+
+	const googleMap = document.getElementById("googleMap");
+	googleMap.innerHTML = "";
+	googleMap.innerHTML = `
+	<iframe
+	width="100%"
+	class="rounded"
+	src="${googleMapUrl}"
+	height="120%"
+	style="border: 0"
+	allowfullscreen=""
+	loading="lazy"
+	referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+	`;
+}
+
 async function getNearbyHospitals() {
 	if ("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(
 			function (position) {
 				const latitude = position.coords.latitude;
 				const longitude = position.coords.longitude;
+
 				const url = `/api/hospitals/proximity?latitude=${latitude}&longitude=${longitude}&amenity=hospital&more=4`;
+				showLocation(longitude, latitude).then(
+					googleMap.classList.remove("invisible")
+				);
 
 				fetch(url)
 					.then((response) => {
