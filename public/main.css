@@ -96,3 +96,10 @@ textarea {
 	/* background-color: transparent; */
 	backdrop-filter: blur(2rem);
 }
+
+#googleMap {
+	transition: 0.5s ease-in;
+}
+#googleMap:hover {
+	transform: scale(3);
+}

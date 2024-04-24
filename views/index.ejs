@@ -219,16 +219,23 @@
 								</div>
 							</a>
 						</li>
-						<li>
-							<a href="javascript:void()" aria-expanded="false">
-								<i class="flaticon-025-dashboard"></i>
-								<span class="nav-text">Dashboard</span>
-							</a>
-						</li>
+				
 						<li>
 							<a href="#nearbyHospitalsContainer" aria-expanded="false">
 								<i class="flaticon-050-info"></i>
 								<span class="nav-text">Nearby Hospitals</span>
+							</a>
+						</li>
+						<li>
+							<a href="#locationCard" aria-expanded="false">
+								<i class="flaticon-045-heart"></i>
+								<span class="nav-text">Emergency Card</span>
+							</a>
+						</li>
+						<li>
+							<a href="#mapLocation" aria-expanded="false">
+								<i class="flaticon-045-heart"></i>
+								<span class="nav-text">My Location</span>
 							</a>
 						</li>
 						<li>
@@ -239,15 +246,9 @@
 						</li>
 
 						<li>
-							<a href="javascript:void()" aria-expanded="false">
-								<i class="flaticon-045-heart"></i>
-								<span class="nav-text">Plugins</span>
-							</a>
-						</li>
-						<li>
 							<a href="widget-basic.html" class="ai-icon" aria-expanded="false">
 								<i class="flaticon-013-checkmark"></i>
-								<span class="nav-text">Widget</span>
+								<span class="nav-text">Previous Requests</span>
 							</a>
 						</li>
 						<li>
@@ -290,7 +291,8 @@
 						<%- include("partials/nearbyHospitals.ejs") %>
 					<div class="row">
 					<!-- ? Ambulance Service Section-->
-						<div class="col-xl-9 col-xxl-12">
+						<div class="col-xl-9 col-xxl-12 mb-4" id="locationCard">
+							<h2 class="text-warning ms-3">Emergency Card</h2>
 							<div class="card">
 								<!-- ?Start of  Call ambulance -->
 								<div class="card-body">
@@ -358,27 +360,9 @@
 							</div>
 						</div>
 						<!-- ?Ai Assistant Get Remedy -->
-						<div class="col-xl-3 col-xxl-5">
+						<div class="col-xl-3 col-xxl-5" id="mapLocation">
 							<!-- ?Start of our Activity stats -->
-							<div class="card">
-								<div class="card-header pb-0 border-0">
-									<div>
-										<h4 class="card-title mb-2">Activity</h4>
-										<h2 class="mb-0">$78120</h2>
-									</div>
-									<ul class="card-list">
-										<li class="justify-content-end">
-											Income<span class="bg-success circle me-0 ms-2"></span>
-										</li>
-										<li class="justify-content-end">
-											Outcome<span class="bg-danger circle me-0 ms-2"></span>
-										</li>
-									</ul>
-								</div>
-								<div class="card-body pb-0 pt-3">
-									<div id="chartBar" class="bar-chart"></div>
-								</div>
-							</div>
+							<%- include("partials/locationCard.ejs") %>
 						</div>
 						<h2 class="text-warning ms-4">Quick Remedy</h2>
 						<div class="col-xl-6 col-xxl-12">
