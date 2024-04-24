@@ -25,9 +25,7 @@ async function rejectCookie() {
 async function showLocation(long, lat, zoom) {
 	const googleMapUrl = `http://maps.google.com/?ie=UTF8&ll=${Number(
 		lat
-	)},${Number(
-		long
-	)}&spn=0.093419,0.169086&t=m&z=${zoom}&output=embed&markers=-1.249068,36.871364`;
+	)},${Number(long)}&spn=0.093419,0.169086&t=m&z=${zoom}&output=embed`;
 
 	const googleMap = document.querySelector("#googleMap");
 	googleMap.innerHTML = "";
@@ -53,7 +51,7 @@ async function getNearbyHospitals() {
 				const latitude = position.coords.latitude;
 				const longitude = position.coords.longitude;
 
-				const url = `/api/hospitals/proximity?latitude=${latitude}&longitude=${longitude}&amenity=hospital&more=4`;
+				const url = `/api/hospitals/proximity?latitude=${latitude}&longitude=${longitude}&amenity=hospital&more=8`;
 				showLocation(longitude, latitude, 13);
 
 				fetch(url)
@@ -110,7 +108,7 @@ async function getNearbyHospitals() {
                                                                     <span id="walkingTime"><i class='bx bx-walk mx-1 text-warning'></i>${walkingTime}</span>
                                                                 </p>
 																
-                                                                    <button id="directionBtn" class="btn btn-secondary  py-0 mx-0"  onclick="showLocation('${hospital.location[0]}','${hospital.location[1]}',16)"
+                                                                    <button id="directionBtn" class="btn btn-secondary  py-0 mx-0"  onclick="showLocation('${hospital.location[0]}','${hospital.location[1]}',18)"
 																	>
                                                                         <div class="text-white-emphasis  fs-3 m-0 p-0">
                                                                     <span><i class='bx bxs-direction-right text-warning fs-3 mx-1 py-0 mx-0'></i></span>View Location 

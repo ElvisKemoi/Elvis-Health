@@ -227,13 +227,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void()" aria-expanded="false">
+							<a href="#locationCard" aria-expanded="false">
 								<i class="flaticon-045-heart"></i>
 								<span class="nav-text">Emergency Card</span>
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void()" aria-expanded="false">
+							<a href="#mapLocation" aria-expanded="false">
 								<i class="flaticon-045-heart"></i>
 								<span class="nav-text">My Location</span>
 							</a>
@@ -291,7 +291,7 @@
 						<%- include("partials/nearbyHospitals.ejs") %>
 					<div class="row">
 					<!-- ? Ambulance Service Section-->
-						<div class="col-xl-9 col-xxl-12 mb-4">
+						<div class="col-xl-9 col-xxl-12 mb-4" id="locationCard">
 							<h2 class="text-warning ms-3">Emergency Card</h2>
 							<div class="card">
 								<!-- ?Start of  Call ambulance -->
@@ -360,7 +360,7 @@
 							</div>
 						</div>
 						<!-- ?Ai Assistant Get Remedy -->
-						<div class="col-xl-3 col-xxl-5">
+						<div class="col-xl-3 col-xxl-5" id="mapLocation">
 							<!-- ?Start of our Activity stats -->
 							<%- include("partials/locationCard.ejs") %>
 						</div>
