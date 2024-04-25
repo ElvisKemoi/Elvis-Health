@@ -32,10 +32,10 @@ Users can also get quick remedies for their symptoms and also recommends if the 
 
 <h2>Nearby Hospitals</h2>
 Users are able to access nearby hospitals.
-<img src="NearbyHospitals.png" alt="Screenshot of Nearby Hospitals Section.">
+<img src="./Screenshot 2024-04-25 152208.png" alt="Screenshot of Nearby Hospitals Section.">
 <h2>Quick Remedy</h2>
 Users are able to insert their symptoms and the system will give the user a quick remedy.
-<img src="QuickRemedy.png" alt="Screenshot of Quick Remedy Section.>
+<img src="./Screenshot 2024-04-25 152225.png" alt="Screenshot of Quick Remedy Section.>
 
 ## Contributing
 
